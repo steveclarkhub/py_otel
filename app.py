@@ -22,12 +22,3 @@ def roll_dice():
 def roll():
     return randint(1, 6)
 
-@app.route('/resources')
-def cpu_util():
-    cpu_percents = psutil.cpu_percent(interval=1, percpu=True)
-    cpu_core_count = psutil.cpu_count()
-    # cpu_phys_count = psutil.cpu_count(logical=False)
-    return f"""
-    CPU utilization: {cpu_percents}
-    CPU core count: {cpu_core_count}
-    """
